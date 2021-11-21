@@ -1,0 +1,42 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.hero {
+  @include m.grid(1, 2rem);
+  align-items: center;
+  justify-content: center;
+
+  @include m.desktop {
+    @include m.grid(2, v.$separation);
+  }
+
+  &__content {
+    background-color: v.$primary;
+    padding: 3rem;
+
+    @include m.tablet {
+      padding: v.$separation;
+    }
+
+    h2 {
+      color: v.$white;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 30rem;
+      margin-top: 2rem;
+
+      @include m.desktop {
+        margin-top: 0;
+        width: 100%;
+      }
+    }
+  }
+}
